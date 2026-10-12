@@ -22,16 +22,6 @@ npm run build
 
 Os arquivos ficam na pasta `dist`.
 
-## Onde mexer
-
-| O que | Onde |
-|---|---|
-| Textos, telefone, endereço, serviços, preços, horários, dúvidas, depoimentos | `src/dados/site.js` |
-| Fotos | `public/imagens` (veja o `LEIA-ME.txt` de lá) |
-| Cores e fontes | `src/estilos.css` (bloco `@theme`) |
-| Cada seção da página | `src/secoes/` |
-| Modal de agendamento | `src/agendamento/` |
-
 ## Como funciona o agendamento
 
 1. A cliente escolhe o serviço, o dia, o horário e preenche nome e WhatsApp.
