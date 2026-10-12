@@ -13,7 +13,6 @@ function Grupo({ escondido = false }) {
   )
 }
 
-// Faixa em movimento contínuo. O conteúdo é repetido para o laço não ter emenda.
 export default function FaixaServicos() {
   return (
     <section aria-label="Alguns atendimentos" className="faixa overflow-hidden bg-tinta py-[22px] text-[#fbe9e6]">

@@ -97,4 +97,50 @@ body {
     background: var(--color-creme);
     color: var(--color-tinta);
   }
+
+  .sobretitulo {
+    margin: 0 0 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-rosa);
+  }
+
+  .titulo-secao {
+    margin: 0;
+    font-family: var(--font-titulo);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 4.4vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Faixa de serviços em movimento contínuo */
+@keyframes deslizar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.faixa-trilho {
+  animation: deslizar 45s linear infinite;
+}
+
+.faixa:hover .faixa-trilho {
+  animation-play-state: paused;
+}
+
+/* Para quem configurou o sistema para ter menos animações */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .faixa-trilho {
+    animation: none;
+  }
 }

@@ -48,3 +48,9 @@ export const numeros = [
   { valor: '18+', rotulo: 'tipos de atendimento' },
   { valor: '1:1', rotulo: 'atendimento individual' },
 ]
+
+export const valores = [
+  { titulo: 'Personalizado', texto: 'Você no centro do cuidado.' },
+  { titulo: 'Técnica e segurança', texto: 'Procedimentos com responsabilidade.' },
+  { titulo: 'Bem-estar', texto: 'Corpo e mente em equilíbrio.' },
+]
