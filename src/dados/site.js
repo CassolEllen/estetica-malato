@@ -42,3 +42,9 @@ export const faixaServicos = [
   'Peeling',
   'Hydra Gloss',
 ]
+
+export const numeros = [
+  { valor: '[ANOS]', rotulo: 'anos de experiência' },
+  { valor: '18+', rotulo: 'tipos de atendimento' },
+  { valor: '1:1', rotulo: 'atendimento individual' },
+]

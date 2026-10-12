@@ -1,10 +1,9 @@
 import { useState } from 'react'
 
-// Mostra a foto; se o arquivo ainda não existir, mostra um quadro tracejado com a legenda.
 export default function Foto({ src, alt, legenda, className = '', prioridade = false }) {
   const [falhou, setFalhou] = useState(false)
 
-  if (!src || falhou) {
+  if (falhou) {
     return (
       <div
         role="img"
@@ -21,7 +20,6 @@ export default function Foto({ src, alt, legenda, className = '', prioridade = f
       src={src}
       alt={alt}
       loading={prioridade ? 'eager' : 'lazy'}
-      decoding="async"
       onError={() => setFalhou(true)}
       className={`object-cover ${className}`}
     />
