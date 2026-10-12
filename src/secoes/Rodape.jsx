@@ -1,12 +1,12 @@
 import Icone from '../componentes/Icone'
 import { contato, linkInstagram, linkWhatsApp } from '../dados/site'
 
-export default function Rodape() {
-  const redes = [
-    { href: linkWhatsApp(), icone: 'whatsapp', rotulo: 'WhatsApp da Estética Malato' },
-    { href: linkInstagram, icone: 'instagram', rotulo: 'Instagram da Estética Malato' },
-  ]
+const redes = [
+  { href: linkWhatsApp(), icone: 'whatsapp', rotulo: 'WhatsApp da Estética Malato' },
+  { href: linkInstagram, icone: 'instagram', rotulo: 'Instagram da Estética Malato' },
+]
 
+export default function Rodape() {
   return (
     <footer className="pt-10 pb-14">
       <div className="conteiner flex flex-wrap items-center justify-between gap-6 text-sm text-suave">
@@ -22,7 +22,7 @@ export default function Rodape() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={r.rotulo}
-              className="flex size-11 items-center justify-center rounded-full border border-tinta/18 text-tinta transition-colors hover:border-rosa hover:text-rosa"
+              className="flex size-11 items-center justify-center rounded-full border border-tinta/20 text-tinta transition-colors hover:border-rosa hover:text-rosa"
             >
               <Icone nome={r.icone} tamanho={20} espessura={1.6} />
             </a>

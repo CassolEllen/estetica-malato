@@ -6,6 +6,9 @@ import Tratamentos from './secoes/Tratamentos'
 import ComoFunciona from './secoes/ComoFunciona'
 import Depoimentos from './secoes/Depoimentos'
 import Duvidas from './secoes/Duvidas'
+import OndeFica from './secoes/OndeFica'
+import ChamadaFinal from './secoes/ChamadaFinal'
+import Rodape from './secoes/Rodape'
 
 export default function App() {
   return (
@@ -19,7 +22,10 @@ export default function App() {
         <ComoFunciona />
         <Depoimentos />
         <Duvidas />
+        <OndeFica />
+        <ChamadaFinal />
       </main>
+      <Rodape />
     </>
   )
 }
