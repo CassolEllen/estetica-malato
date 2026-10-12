@@ -1,42 +1,18 @@
-import { useState } from 'react'
-import Cabecalho from './secoes/Cabecalho'
-import Destaque from './secoes/Destaque'
-import FaixaServicos from './secoes/FaixaServicos'
-import Sobre from './secoes/Sobre'
-import Tratamentos from './secoes/Tratamentos'
-import ComoFunciona from './secoes/ComoFunciona'
-import Depoimentos from './secoes/Depoimentos'
-import Duvidas from './secoes/Duvidas'
-import OndeFica from './secoes/OndeFica'
-import ChamadaFinal from './secoes/ChamadaFinal'
-import Rodape from './secoes/Rodape'
-import ModalAgendamento from './agendamento/ModalAgendamento'
-
 export default function App() {
-  const [agendamentoAberto, setAgendamentoAberto] = useState(false)
-
   return (
-    <>
-      <a
-        href="#conteudo"
-        className="sr-only z-50 rounded-full bg-tinta px-5 py-3 text-creme focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
-      >
-        Pular para o conteúdo
-      </a>
-      <Cabecalho onAgendar={() => setAgendamentoAberto(true)} />
-      <main id="conteudo" className="overflow-x-clip">
-        <Destaque />
-        <FaixaServicos />
-        <Sobre />
-        <Tratamentos />
-        <ComoFunciona />
-        <Depoimentos />
-        <Duvidas />
-        <OndeFica />
-        <ChamadaFinal />
-      </main>
-      <Rodape />
-      <ModalAgendamento aberto={agendamentoAberto} onFechar={() => setAgendamentoAberto(false)} />
-    </>
+    <main className="p-10">
+      <h1 className="font-titulo text-6xl text-tinta">
+        Cuidado que se reconhece <em className="text-rosa">em cada detalhe.</em>
+      </h1>
+      <p className="mt-4 text-lg text-suave">Mais do que procedimentos, uma experiência de bem-estar.</p>
+      <p className="mt-6 font-assinatura text-4xl text-rosa">Seu tempo. Seu cuidado.</p>
+      <div className="mt-8 flex gap-3">
+        <span className="size-16 rounded-full bg-tinta"></span>
+        <span className="size-16 rounded-full bg-rosa"></span>
+        <span className="size-16 rounded-full bg-rosa-claro"></span>
+        <span className="size-16 rounded-full bg-rosa-fundo"></span>
+        <span className="size-16 rounded-full bg-foto"></span>
+      </div>
+    </main>
   )
 }
