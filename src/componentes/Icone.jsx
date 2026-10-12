@@ -28,6 +28,12 @@ const caminhos = {
       <path d="M12 7.5V12l3 2" />
     </>
   ),
+  calendario: (
+    <>
+      <rect x="4" y="5" width="16" height="15" rx="3" />
+      <path d="M8 3v4M16 3v4M4 10h16" />
+    </>
+  ),
   seta: <path d="M7 17 17 7M8 7h9v9" />,
   navegar: <path d="M3 11 21 3l-8 18-2-8-8-2Z" />,
   fechar: <path d="M6 6l12 12M18 6 6 18" />,
@@ -35,12 +41,6 @@ const caminhos = {
   check: <path d="m5 12 5 5L19 7" />,
   voltar: <path d="M15 18l-6-6 6-6" />,
   avancar: <path d="M9 18l6-6-6-6" />,
-  calendario: (
-    <>
-      <rect x="4" y="5" width="16" height="15" rx="3" />
-      <path d="M8 3v4M16 3v4M4 10h16" />
-    </>
-  ),
 }
 
 export default function Icone({ nome, tamanho = 20, espessura = 1.7, className = '' }) {
@@ -55,7 +55,6 @@ export default function Icone({ nome, tamanho = 20, espessura = 1.7, className =
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      focusable="false"
       className={className}
     >
       {caminhos[nome]}

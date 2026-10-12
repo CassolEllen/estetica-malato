@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -29,4 +30,71 @@ body {
   color: var(--color-tinta);
   font-family: var(--font-corpo);
   -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(168 58 86 / 0.45);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .conteiner {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .conteiner {
+      padding-inline: 48px;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 26px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+
+  .btn-rosa {
+    background: var(--color-rosa);
+    color: var(--color-creme);
+  }
+  .btn-rosa:hover {
+    background: var(--color-rosa-escuro);
+  }
+
+  .btn-escuro {
+    background: var(--color-tinta);
+    color: var(--color-creme);
+  }
+  .btn-escuro:hover {
+    background: #3a2222;
+  }
+
+  .btn-contorno {
+    background: transparent;
+    color: var(--color-tinta);
+    border-color: rgb(75 45 45 / 0.25);
+  }
+  .btn-contorno:hover {
+    border-color: var(--color-tinta);
+  }
+
+  .btn-claro {
+    background: var(--color-creme);
+    color: var(--color-tinta);
+  }
 }

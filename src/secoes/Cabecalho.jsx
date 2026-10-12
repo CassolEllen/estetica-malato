@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
+import { useState } from 'react'
 import Icone, { Marca } from '../componentes/Icone'
 
 const links = [
@@ -13,14 +12,7 @@ const links = [
 export default function Cabecalho({ onAgendar }) {
   const [menuAberto, setMenuAberto] = useState(false)
 
-  useEffect(() => {
-    if (!menuAberto) return
-    const fecharComEsc = (e) => e.key === 'Escape' && setMenuAberto(false)
-    window.addEventListener('keydown', fecharComEsc)
-    return () => window.removeEventListener('keydown', fecharComEsc)
-  }, [menuAberto])
-
-  const agendar = () => {
+  function agendar() {
     setMenuAberto(false)
     onAgendar()
   }
@@ -49,49 +41,40 @@ export default function Cabecalho({ onAgendar }) {
             <Icone nome="calendario" tamanho={17} />
             Agendar horário
           </button>
+
           <button
             type="button"
-            className="flex size-11 items-center justify-center rounded-full text-tinta lg:hidden"
+            onClick={() => setMenuAberto(!menuAberto)}
             aria-expanded={menuAberto}
             aria-controls="menu-celular"
             aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
-            onClick={() => setMenuAberto((v) => !v)}
+            className="flex size-11 items-center justify-center rounded-full text-tinta lg:hidden"
           >
             <Icone nome={menuAberto ? 'fechar' : 'menu'} tamanho={22} />
           </button>
         </div>
       </div>
 
-      <AnimatePresence>
-        {menuAberto && (
-          <motion.nav
-            id="menu-celular"
-            aria-label="Navegação no celular"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-tinta/10 lg:hidden"
-          >
-            <div className="conteiner flex flex-col py-3">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuAberto(false)}
-                  className="border-b border-tinta/10 py-4 font-titulo text-2xl text-tinta no-underline"
-                >
-                  {link.rotulo}
-                </a>
-              ))}
-              <button type="button" onClick={agendar} className="btn btn-rosa mt-5 mb-2 w-full">
-                <Icone nome="calendario" tamanho={17} />
-                Agendar horário
-              </button>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      {menuAberto && (
+        <nav id="menu-celular" aria-label="Navegação no celular" className="border-t border-tinta/10 lg:hidden">
+          <div className="conteiner flex flex-col py-3">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuAberto(false)}
+                className="border-b border-tinta/10 py-4 font-titulo text-2xl text-tinta no-underline"
+              >
+                {link.rotulo}
+              </a>
+            ))}
+            <button type="button" onClick={agendar} className="btn btn-rosa mt-5 mb-2 w-full">
+              <Icone nome="calendario" tamanho={17} />
+              Agendar horário
+            </button>
+          </div>
+        </nav>
+      )}
     </header>
   )
 }
