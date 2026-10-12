@@ -117,7 +117,7 @@ body {
   }
 }
 
-/* Faixa de serviços em movimento contínuo */
+
 @keyframes deslizar {
   from {
     transform: translateX(0);
@@ -135,7 +135,16 @@ body {
   animation-play-state: paused;
 }
 
-/* Para quem configurou o sistema para ter menos animações */
+
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

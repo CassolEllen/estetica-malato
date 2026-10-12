@@ -95,3 +95,44 @@ export const outrosServicos = [
   'Plástica dos pés',
   'Hydra Gloss',
 ]
+
+export const etapas = [
+  {
+    numero: '01',
+    titulo: 'Você conta o que procura',
+    texto: 'Uma conversa inicial para entender seu momento, preferências e disponibilidade.',
+  },
+  {
+    numero: '02',
+    titulo: 'Encontramos o seu ritmo',
+    texto: 'As possibilidades de atendimento são apresentadas com clareza e sem pressa.',
+  },
+  {
+    numero: '03',
+    titulo: 'Seu tempo começa',
+    texto: 'Um encontro acolhedor, para você sair mais leve e presente em si.',
+  },
+]
+
+// Troque pelos depoimentos reais das clientes (com autorização delas)
+export const depoimentos = [
+  { texto: '[DEPOIMENTO REAL DE UMA CLIENTE]', nome: '[NOME]', tratamento: '[TRATAMENTO]' },
+  { texto: '[DEPOIMENTO REAL DE UMA CLIENTE]', nome: '[NOME]', tratamento: '[TRATAMENTO]' },
+  { texto: '[DEPOIMENTO REAL DE UMA CLIENTE]', nome: '[NOME]', tratamento: '[TRATAMENTO]' },
+]
+
+export const duvidas = [
+  {
+    pergunta: 'Como funciona o primeiro contato?',
+    resposta:
+      'Você conta pelo WhatsApp o que procura e sua disponibilidade. A Rose apresenta as possibilidades e combina os próximos passos com você.',
+  },
+  {
+    pergunta: 'Posso tirar dúvidas antes de escolher um serviço?',
+    resposta: 'Sim. A conversa inicial existe justamente para você entender cada opção e escolher com tranquilidade.',
+  },
+  {
+    pergunta: 'Onde fica o espaço e qual o horário?',
+    resposta: 'O endereço e o mapa estão logo abaixo. O atendimento é com hora marcada, [DIAS E HORÁRIOS].',
+  },
+]
