@@ -2,6 +2,7 @@ import Cabecalho from './secoes/Cabecalho'
 import Destaque from './secoes/Destaque'
 import FaixaServicos from './secoes/FaixaServicos'
 import Sobre from './secoes/Sobre'
+import Tratamentos from './secoes/Tratamentos'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Destaque />
         <FaixaServicos />
         <Sobre />
+        <Tratamentos />
       </main>
     </>
   )
