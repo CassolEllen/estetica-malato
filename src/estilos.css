@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* Cores e fontes do Figma (use como classes: bg-papel, text-rosa, font-titulo...) */
+@theme {
+  --color-papel: #fbf4f1;
+  --color-papel-escuro: #f6e7e3;
+  --color-cartao: #fffaf8;
+  --color-creme: #fffefa;
+  --color-tinta: #4b2d2d;
+  --color-suave: #6b4f4d;
+  --color-rosa: #a83a56;
+  --color-rosa-escuro: #8d2f47;
+  --color-rosa-claro: #ed9eb0;
+  --color-rosa-fundo: #f7e1e3;
+  --color-foto: #efd9d5;
+  --color-foto-escura: #e5cbc6;
+  --color-erro: #a44737;
+
+  --font-titulo: "Cormorant Garamond", Georgia, serif;
+  --font-corpo: "DM Sans", system-ui, sans-serif;
+  --font-assinatura: "Allura", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-papel);
+  color: var(--color-tinta);
+  font-family: var(--font-corpo);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(168 58 86 / 0.45);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .conteiner {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (min-width: 768px) {
+    .conteiner { padding-inline: 48px; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 26px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color .2s, color .2s, border-color .2s, transform .2s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-rosa { background: var(--color-rosa); color: var(--color-creme); }
+  .btn-rosa:hover { background: var(--color-rosa-escuro); }
+  .btn-escuro { background: var(--color-tinta); color: var(--color-creme); }
+  .btn-escuro:hover { background: #3a2222; }
+  .btn-contorno { border-color: rgb(75 45 45 / .25); color: var(--color-tinta); background: transparent; }
+  .btn-contorno:hover { border-color: var(--color-tinta); }
+  .btn-claro { background: var(--color-creme); color: var(--color-tinta); }
+  .btn-claro:hover { background: #fff; }
+
+  .sobretitulo {
+    margin: 0 0 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--color-rosa);
+  }
+  .titulo-secao {
+    margin: 0;
+    font-family: var(--font-titulo);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 4.4vw, 4rem);
+    line-height: 1;
+    letter-spacing: -.03em;
+  }
+}
+
+/* Faixa de serviços em movimento contínuo */
+@keyframes deslizar {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.faixa-trilho { animation: deslizar 45s linear infinite; }
+.faixa:hover .faixa-trilho { animation-play-state: paused; }
+
+/* Fundo do modal de agendamento */
+dialog::backdrop {
+  background: rgb(75 45 45 / .55);
+  backdrop-filter: blur(4px);
+}
+
+/* Sanfona das dúvidas */
+details summary { list-style: none; cursor: pointer; }
+details summary::-webkit-details-marker { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .faixa-trilho { animation: none; }
+}

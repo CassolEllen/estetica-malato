@@ -1,0 +1,13 @@
+Coloque as fotos do site nesta pasta, com estes nomes:
+
+rose.jpg                        Foto principal da Rose (topo do site, moldura em arco)
+sobre-atendimento.jpg           Seção "Sobre": foto do atendimento facial
+sobre-espaco.jpg                Seção "Sobre": foto do espaço (ambiente)
+tratamento-facial.jpg           Card "Limpeza de pele": Rose realizando tratamento facial
+tratamento-drenagem.jpg         Card "Drenagem linfática": Rose realizando drenagem
+tratamento-pos-operatorio.jpg   Card "Pré e pós-operatório"
+
+Se a foto for .png ou tiver outro nome, ajuste o caminho em src/dados/site.js (objeto "fotos").
+Enquanto a foto não existir, o site mostra um quadro tracejado no lugar dela.
+
+Dica: exporte em .jpg ou .webp com até 1600 px no lado maior, para o site carregar rápido.
