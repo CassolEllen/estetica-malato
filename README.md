@@ -39,16 +39,3 @@ Os arquivos ficam na pasta `dist`.
 3. A cliente envia, e a Rose confirma o horário por lá.
 
 Não há banco de dados nem servidor: nada fica salvo no site.
-
-## Antes de publicar
-
-- [ ] Colocar as fotos em `public/imagens`
-- [ ] Trocar `[ANOS]`, `[DIAS E HORÁRIOS]` e os depoimentos em `src/dados/site.js`
-- [ ] Conferir o número do WhatsApp (celular tem 9 dígitos depois do DDD)
-- [ ] Conferir preços e durações dos serviços do agendamento
-
-## Publicar na Vercel
-
-1. Suba a pasta para um repositório no GitHub.
-2. Na Vercel, clique em "Add New Project" e escolha o repositório.
-3. A Vercel reconhece o Vite sozinha. Clique em "Deploy".
