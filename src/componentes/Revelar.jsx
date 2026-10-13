@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react'
 
-// Faz o conteúdo surgir suavemente quando entra na tela.
 export default function Revelar({ children, atraso = 0, className = '', como = 'div' }) {
   const reduzir = useReducedMotion()
   const Elemento = motion[como]
