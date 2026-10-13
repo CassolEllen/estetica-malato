@@ -136,3 +136,10 @@ export const duvidas = [
     resposta: 'O endereço e o mapa estão logo abaixo. O atendimento é com hora marcada, [DIAS E HORÁRIOS].',
   },
 ]
+
+export const servicosAgendamento = [
+  { id: 'limpeza', nome: 'Limpeza de pele', detalhe: '60 min · R$ 180,00' },
+  { id: 'drenagem', nome: 'Drenagem linfática', detalhe: '50 min · R$ 160,00' },
+  { id: 'pos', nome: 'Pré e pós-operatório', detalhe: '75 min · R$ 220,00' },
+  { id: 'conversar', nome: 'Ainda não sei', detalhe: 'Quero conversar antes' },
+]

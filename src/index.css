@@ -145,6 +145,11 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
+dialog::backdrop {
+  background: rgb(75 45 45 / 0.55);
+  backdrop-filter: blur(4px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
