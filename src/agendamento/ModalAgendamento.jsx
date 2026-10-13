@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import Icone from '../componentes/Icone'
 import { horarios, linkWhatsApp, servicosAgendamento } from '../dados/site'
 import Calendario from './Calendario'
-import { deId, emailValido, formatarCompleto, mascaraTelefone, montarMensagem } from './utilidades'
+import { deId, emailValido, formatarCompleto, montarMensagem } from './utilidades'
 
 const NOMES_ETAPAS = ['Serviço', 'Data e horário', 'Seus dados', 'Confirmação']
 
@@ -13,7 +13,6 @@ const ESTADO_INICIAL = {
   data: null,
   horario: null,
   nome: '',
-  telefone: '',
   email: '',
   erro: '',
 }
@@ -65,7 +64,6 @@ export default function ModalAgendamento({ aberto, onFechar }) {
     if (etapa === 2 && (!estado.data || !estado.horario)) return 'Escolha um dia e um horário.'
     if (etapa === 3) {
       if (!estado.nome.trim()) return 'Informe seu nome.'
-      if (estado.telefone.replace(/\D/g, '').length < 10) return 'Informe um WhatsApp com DDD.'
       if (!emailValido(estado.email)) return 'Confira o e-mail digitado.'
     }
     return ''
@@ -76,7 +74,6 @@ export default function ModalAgendamento({ aberto, onFechar }) {
       servico: servico.nome,
       quando,
       nome: estado.nome.trim(),
-      telefone: estado.telefone,
       email: estado.email.trim(),
     })
     window.open(linkWhatsApp(mensagem), '_blank', 'noopener,noreferrer')
@@ -111,8 +108,8 @@ export default function ModalAgendamento({ aberto, onFechar }) {
     { rotulo: 'SERVIÇO', valor: servico?.nome, extra: servico?.detalhe, etapa: 1 },
     { rotulo: 'QUANDO', valor: quando, etapa: 2 },
     {
-      rotulo: 'CONTATO',
-      valor: [estado.nome.trim(), estado.telefone, estado.email.trim()].filter(Boolean).join(' · '),
+      rotulo: 'SEUS DADOS',
+      valor: [estado.nome.trim(), estado.email.trim()].filter(Boolean).join(' · '),
       etapa: 3,
     },
   ]
@@ -277,8 +274,8 @@ export default function ModalAgendamento({ aberto, onFechar }) {
 
                 {etapa === 3 && (
                   <div>
-                    <h3 className={tituloEtapa}>Como falamos com você?</h3>
-                    <p className={subtituloEtapa}>A confirmação chega pelo WhatsApp.</p>
+                    <h3 className={tituloEtapa}>Como podemos te chamar?</h3>
+                    <p className={subtituloEtapa}>A Rose confirma o horário direto no seu WhatsApp.</p>
 
                     <div className="flex flex-col gap-4">
                       <label className={rotuloCampo}>
@@ -290,19 +287,6 @@ export default function ModalAgendamento({ aberto, onFechar }) {
                           placeholder="Como você gostaria de ser chamada"
                           value={estado.nome}
                           onChange={(e) => atualizar({ nome: e.target.value })}
-                        />
-                      </label>
-
-                      <label className={rotuloCampo}>
-                        WhatsApp
-                        <input
-                          className={campo}
-                          type="tel"
-                          inputMode="tel"
-                          autoComplete="tel-national"
-                          placeholder="(00) 00000-0000"
-                          value={estado.telefone}
-                          onChange={(e) => atualizar({ telefone: mascaraTelefone(e.target.value) })}
                         />
                       </label>
 

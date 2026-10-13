@@ -31,28 +31,18 @@ export function diaDisponivel(data) {
   return true
 }
 
-export function mascaraTelefone(valor) {
-  const n = valor.replace(/\D/g, '').slice(0, 11)
-  if (n.length === 0) return ''
-  if (n.length <= 2) return `(${n}`
-  if (n.length <= 6) return `(${n.slice(0, 2)}) ${n.slice(2)}`
-  if (n.length <= 10) return `(${n.slice(0, 2)}) ${n.slice(2, 6)}-${n.slice(6)}`
-  return `(${n.slice(0, 2)}) ${n.slice(2, 7)}-${n.slice(7)}`
-}
-
 export function emailValido(email) {
   const e = email.trim()
   return e === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
 }
 
-export function montarMensagem({ servico, quando, nome, telefone, email }) {
+export function montarMensagem({ servico, quando, nome, email }) {
   const linhas = [
     'Olá, Rose! Vim pelo site e gostaria de agendar um horário:',
     '',
     `• Serviço: ${servico}`,
     `• Quando: ${quando}`,
     `• Nome: ${nome}`,
-    `• WhatsApp: ${telefone}`,
   ]
   if (email) linhas.push(`• E-mail: ${email}`)
   return linhas.join('\n')
