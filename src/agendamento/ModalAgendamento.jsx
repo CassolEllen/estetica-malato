@@ -1,24 +1,32 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Icone from '../componentes/Icone'
-import { servicosAgendamento } from '../dados/site'
+import { horarios, servicosAgendamento } from '../dados/site'
+import { proximosDias } from './utilidades'
 
 const NOMES_ETAPAS = ['Serviço', 'Data e horário', 'Seus dados', 'Confirmação']
 
 const ESTADO_INICIAL = {
   etapa: 1,
   servico: null,
+  data: null,
+  horario: null,
   erro: '',
 }
 
 const tituloEtapa = 'm-0 font-titulo text-[30px] md:text-[34px] leading-[1.05] font-medium'
 const subtituloEtapa = 'mt-1.5 mb-5 md:mb-6 text-[15px] leading-normal text-suave'
+const rotuloGrupo = 'mt-6 mb-2.5 text-xs font-semibold tracking-[0.14em] text-suave'
 
 export default function ModalAgendamento({ aberto, onFechar }) {
   const dialogo = useRef(null)
   const [estado, setEstado] = useState(ESTADO_INICIAL)
 
+  
+  const dias = useMemo(() => proximosDias(7), [aberto])
+
   const { etapa } = estado
   const servico = servicosAgendamento.find((s) => s.id === estado.servico)
+  const dia = dias.find((d) => d.id === estado.data)
 
   function atualizar(mudancas) {
     setEstado((atual) => ({ ...atual, erro: '', ...mudancas }))
@@ -48,6 +56,7 @@ export default function ModalAgendamento({ aberto, onFechar }) {
 
   function validar() {
     if (etapa === 1 && !estado.servico) return 'Escolha um serviço para continuar.'
+    if (etapa === 2 && (!estado.data || !estado.horario)) return 'Escolha um dia e um horário.'
     return ''
   }
 
@@ -64,11 +73,15 @@ export default function ModalAgendamento({ aberto, onFechar }) {
     atualizar({ etapa: etapa - 1 })
   }
 
- 
   const resumo = [
     ['SERVIÇO', servico?.nome],
-    ['DATA', null],
-    ['HORÁRIO', null],
+    ['DATA', dia?.completo],
+    ['HORÁRIO', estado.horario],
+  ]
+
+  const periodos = [
+    ['MANHÃ', 'Horários da manhã', horarios.manha],
+    ['TARDE', 'Horários da tarde', horarios.tarde],
   ]
 
   return (
@@ -180,7 +193,62 @@ export default function ModalAgendamento({ aberto, onFechar }) {
               </fieldset>
             )}
 
-            {etapa >= 2 && (
+            {etapa === 2 && (
+              <div>
+                <h3 className={tituloEtapa}>Quando fica melhor para você?</h3>
+                <p className={subtituloEtapa}>Escolha um dia e um horário de preferência.</p>
+
+                <div role="group" aria-label="Dia" className="flex flex-wrap gap-2">
+                  {dias.map((d) => {
+                    const ativo = estado.data === d.id
+                    return (
+                      <button
+                        key={d.id}
+                        type="button"
+                        aria-pressed={ativo}
+                        aria-label={d.completo}
+                        onClick={() => atualizar({ data: d.id })}
+                        className={`flex w-16 flex-col items-center gap-0.5 rounded-[14px] border py-3 transition-colors ${
+                          ativo ? 'border-tinta bg-tinta text-creme' : 'border-tinta/15 bg-creme text-tinta hover:border-rosa/50'
+                        }`}
+                      >
+                        <span className="text-xs tracking-[0.08em] uppercase opacity-75">{d.semana}</span>
+                        <span className="font-titulo text-[26px] leading-none font-semibold">{d.dia}</span>
+                        <span className="text-[11px] opacity-75">{d.mes}</span>
+                      </button>
+                    )
+                  })}
+                </div>
+
+                {periodos.map(([rotulo, descricao, lista]) => (
+                  <div key={rotulo} role="group" aria-label={descricao}>
+                    <p className={rotuloGrupo}>{rotulo}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {lista.map((h) => {
+                        const ativo = estado.horario === h
+                        return (
+                          <button
+                            key={h}
+                            type="button"
+                            aria-pressed={ativo}
+                            onClick={() => atualizar({ horario: h })}
+                            className={`min-h-11 rounded-full border px-[18px] text-sm transition-colors ${
+                              ativo ? 'border-rosa bg-rosa text-creme' : 'border-tinta/15 bg-creme text-tinta hover:border-rosa/50'
+                            }`}
+                          >
+                            {h}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+                ))}
+
+                <p className="mt-5 mb-0 text-[13px] text-suave">Horários sujeitos à confirmação da Rose.</p>
+              </div>
+            )}
+
+            {etapa >= 3 && (
               <div>
                 <h3 className={tituloEtapa}>{NOMES_ETAPAS[etapa - 1]}</h3>
                 <p className={subtituloEtapa}>Esta etapa vem na próxima parte.</p>

@@ -114,7 +114,7 @@ export const etapas = [
   },
 ]
 
-// Troque pelos depoimentos reais das clientes (com autorização delas)
+
 export const depoimentos = [
   { texto: '[DEPOIMENTO REAL DE UMA CLIENTE]', nome: '[NOME]', tratamento: '[TRATAMENTO]' },
   { texto: '[DEPOIMENTO REAL DE UMA CLIENTE]', nome: '[NOME]', tratamento: '[TRATAMENTO]' },
@@ -143,3 +143,10 @@ export const servicosAgendamento = [
   { id: 'pos', nome: 'Pré e pós-operatório', detalhe: '75 min · R$ 220,00' },
   { id: 'conversar', nome: 'Ainda não sei', detalhe: 'Quero conversar antes' },
 ]
+
+export const horarios = {
+  manha: ['09:00', '10:30'],
+  tarde: ['13:00', '14:30', '16:00', '17:30'],
+}
+
+export const diasSemAtendimento = [0]
