@@ -150,3 +150,7 @@ export const horarios = {
 }
 
 export const diasSemAtendimento = [0]
+
+export const limiteAgendamentoDias = 60
+
+export const datasBloqueadas = ['2026-11-02', '2026-11-15', '2026-12-25']
