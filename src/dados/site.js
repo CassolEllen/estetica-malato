@@ -8,7 +8,7 @@ export const contato = {
   cidade: 'Chapecó',
   uf: 'SC',
   cep: '89801-060',
-  horario: 'Com hora marcada · [DIAS E HORÁRIOS]',
+  horario: 'Com hora marcada, de segunda a sexta-feira, das 9h às 18h',
 }
 
 export const enderecoCompleto = `${contato.rua}, ${contato.bairro}, ${contato.cidade} - ${contato.uf}, ${contato.cep}`
@@ -45,7 +45,7 @@ export const faixaServicos = [
 ]
 
 export const numeros = [
-  { valor: '[ANOS]', rotulo: 'anos de experiência' },
+  { valor: '8', rotulo: 'anos de experiência' },
   { valor: '18+', rotulo: 'tipos de atendimento' },
   { valor: '1:1', rotulo: 'atendimento individual' },
 ]
@@ -134,7 +134,7 @@ export const duvidas = [
   },
   {
     pergunta: 'Onde fica o espaço e qual o horário?',
-    resposta: 'O endereço e o mapa estão logo abaixo. O atendimento é com hora marcada, [DIAS E HORÁRIOS].',
+    resposta: 'O endereço e o mapa estão logo abaixo. O atendimento é com hora marcada.',
   },
 ]
 
