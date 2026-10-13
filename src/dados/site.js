@@ -26,12 +26,12 @@ export function linkWhatsApp(mensagem) {
 }
 
 export const fotos = {
-  rose: '/imagens/rose.jpg',
-  sobreAtendimento: '/imagens/sobre-atendimento.jpg',
-  sobreEspaco: '/imagens/sobre-espaco.jpg',
-  facial: '/imagens/tratamento-facial.jpg',
-  drenagem: '/imagens/tratamento-drenagem.jpg',
-  posOperatorio: '/imagens/tratamento-pos-operatorio.jpg',
+  rose: '/imagens/rose-malato.png',
+  sobreAtendimento: '/imagens/cuidado-acolhedor.png',
+  sobreEspaco: '/imagens/toalha-lirio.png',
+  facial: '/imagens/cuidados-faciais.png',
+  drenagem: '/imagens/drenagem-linfatica.png',
+  posOperatorio: '/imagens/pos-operatorio.png',
 }
 
 export const faixaServicos = [

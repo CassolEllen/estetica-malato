@@ -1,26 +1,27 @@
 import Foto from '../componentes/Foto'
+import Revelar from '../componentes/Revelar'
 import { fotos, valores } from '../dados/site'
 
 export default function Sobre() {
   return (
     <section id="sobre" className="py-24 md:py-[120px]">
       <div className="conteiner flex flex-wrap items-center gap-[72px]">
-        <div className="grid min-w-0 flex-[1_1_380px] grid-cols-2 gap-4">
+        <Revelar className="grid min-w-0 flex-[1_1_380px] grid-cols-2 gap-4">
           <Foto
             src={fotos.sobreAtendimento}
-            alt="Atendimento facial na Estética Malato"
-            legenda="Foto do atendimento facial"
+            alt="Massagem relaxante com as mãos da Rose sobre as costas da cliente"
+            legenda="Foto do atendimento"
             className="aspect-[3/4] w-full rounded-3xl"
           />
           <Foto
             src={fotos.sobreEspaco}
-            alt="Ambiente do espaço da Estética Malato"
+            alt="Toalha enrolada com lírios brancos"
             legenda="Foto do espaço (ambiente)"
-            className="mt-14 aspect-[3/4] w-full rounded-3xl"
+            className="mt-14 aspect-[3/4] w-full rounded-3xl object-[70%_50%]"
           />
-        </div>
+        </Revelar>
 
-        <div className="min-w-0 flex-[1_1_480px]">
+        <Revelar atraso={0.1} className="min-w-0 flex-[1_1_480px]">
           <p className="sobretitulo">Sobre a Rose</p>
           <h2 className="titulo-secao">Beleza também pode ser uma forma de presença.</h2>
           <p className="mt-7 max-w-[540px] text-[17px] leading-[1.7] text-suave">
@@ -37,7 +38,7 @@ export default function Sobre() {
               </li>
             ))}
           </ul>
-        </div>
+        </Revelar>
       </div>
     </section>
   )
