@@ -1,7 +1,6 @@
 # Estética Malato
 
 Landing page da Estética Malato (Rose Malato) com agendamento pelo WhatsApp.
-Feito com React, Vite, Tailwind CSS 4 e Motion (Framer Motion).
 
 ## Como rodar
 
@@ -20,8 +19,6 @@ Para gerar a versão final, que vai para a hospedagem:
 npm run build
 ```
 
-Os arquivos ficam na pasta `dist`.
-
 ## Como funciona o agendamento
 
 1. A cliente escolhe o serviço, o dia, o horário e preenche nome e WhatsApp.
@@ -29,3 +26,10 @@ Os arquivos ficam na pasta `dist`.
 3. A cliente envia, e a Rose confirma o horário por lá.
 
 Não há banco de dados nem servidor: nada fica salvo no site.
+
+## Tecnologias
+
+- [React](https://react.dev)
+- [Vite](https://vite.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Motion](https://motion.dev)
