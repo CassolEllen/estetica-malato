@@ -15,7 +15,7 @@ export default function Destaque() {
       }
 
   return (
-    <section id="inicio" className="pt-12 pb-20 md:pt-[72px] md:pb-24">
+    <section id="inicio" className="pt-12 pb-24 md:pt-[72px] md:pb-28">
       <div className="conteiner flex flex-wrap items-center gap-16">
         <Revelar className="min-w-0 flex-[1_1_480px]">
           <p className="mb-6 inline-flex rounded-full border border-rosa/30 px-4 py-2 text-xs font-medium tracking-[0.14em] text-rosa">
@@ -60,7 +60,7 @@ export default function Destaque() {
           <div className="relative w-full max-w-[480px]">
             <Foto
               src={fotos.rose}
-              alt="Rose Malato, esteticista e massoterapeuta"
+              alt="Rose Malato, esteticista e massoterapeuta, com a frase: Acredito que o cuidado transforma não só a estética, mas também a forma como você se sente no mundo."
               legenda="Aqui vamos colocar a foto da Rose"
               prioridade
               className="aspect-[4/5] w-full rounded-t-[240px] rounded-b-[28px]"
@@ -68,7 +68,7 @@ export default function Destaque() {
 
             <motion.div
               {...flutuar}
-              className="absolute bottom-12 -left-2 flex items-center gap-3.5 rounded-[18px] bg-creme px-5 py-4 shadow-[0_20px_50px_rgba(75,45,45,0.14)] sm:-left-7"
+              className="absolute -bottom-14 -left-2 flex items-center gap-3.5 rounded-[18px] bg-creme px-5 py-4 shadow-[0_20px_50px_rgba(75,45,45,0.18)] sm:-left-7"
             >
               <span className="flex size-11 items-center justify-center rounded-full bg-rosa-fundo text-rosa">
                 <Icone nome="coracao" tamanho={20} espessura={1.6} />

@@ -28,10 +28,11 @@ export function linkWhatsApp(mensagem) {
 export const fotos = {
   rose: '/imagens/rose-malato.png',
   sobreAtendimento: '/imagens/cuidado-acolhedor.png',
-  sobreEspaco: '/imagens/toalha-lirio.png',
+  sobreEspaco: '/imagens/limpeza-de-pele.jpg',
   facial: '/imagens/cuidados-faciais.png',
   drenagem: '/imagens/drenagem-linfatica.png',
   posOperatorio: '/imagens/pos-operatorio.png',
+  lirio: '/imagens/toalha-lirio.png',
 }
 
 export const faixaServicos = [

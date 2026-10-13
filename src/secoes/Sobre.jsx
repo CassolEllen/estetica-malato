@@ -15,9 +15,9 @@ export default function Sobre() {
           />
           <Foto
             src={fotos.sobreEspaco}
-            alt="Toalha enrolada com lírios brancos"
-            legenda="Foto do espaço (ambiente)"
-            className="mt-14 aspect-[3/4] w-full rounded-3xl object-[70%_50%]"
+            alt="Cliente recebendo limpeza de pele"
+            legenda="Foto da limpeza de pele"
+            className="mt-14 aspect-[3/4] w-full rounded-3xl"
           />
         </Revelar>
 
