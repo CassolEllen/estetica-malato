@@ -79,7 +79,7 @@ export default function Destaque() {
               </span>
             </motion.div>
 
-            <p className="absolute -top-2 right-0 m-0 rotate-[-6deg] text-right font-assinatura text-[40px] leading-[0.85] text-rosa sm:-right-2">
+            <p className="absolute -top-5 right-0 m-0 rotate-[-8deg] text-right font-assinatura text-[40px] leading-[0.85] text-rosa [text-shadow:0_0_12px_#fbf4f1,0_0_24px_#fbf4f1] sm:-right-4 lg:-right-20">
               Seu tempo.
               <br />
               Seu cuidado.
