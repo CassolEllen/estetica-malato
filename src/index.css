@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-papel: #fbf4f1;
-  --color-papel-escuro: #f6e7e3;
-  --color-cartao: #fffaf8;
-  --color-creme: #fffefa;
-  --color-tinta: #4b2d2d;
-  --color-suave: #6b4f4d;
-  --color-rosa: #a83a56;
-  --color-rosa-escuro: #8d2f47;
-  --color-rosa-claro: #ed9eb0;
-  --color-rosa-fundo: #f7e1e3;
-  --color-foto: #efd9d5;
+  --color-papel: #fff1e8;
+  --color-papel-escuro: #f7c6d0;
+  --color-cartao: #fffaf7;
+  --color-creme: #ffffff;
+  --color-tinta: #5b3a4e;
+  --color-suave: #6e4a5e;
+
+  --color-rosa: #9a3660;
+  --color-rosa-escuro: #7f2b4f;
+  --color-rosa-vivo: #e47a9d;
+  --color-rosa-medio: #f3a6b8;
+  --color-rosa-claro: #f3a6b8;
+  --color-rosa-fundo: #f7c6d0;
+
+  --color-foto: #f7c6d0;
   --color-erro: #a44737;
 
   --font-titulo: "Cormorant Garamond", Georgia, serif;
@@ -33,7 +37,7 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid rgb(168 58 86 / 0.45);
+  outline: 3px solid rgb(154 54 96 / 0.45);
   outline-offset: 3px;
 }
 
@@ -81,13 +85,13 @@ body {
     color: var(--color-creme);
   }
   .btn-escuro:hover {
-    background: #3a2222;
+    background: #472c3c;
   }
 
   .btn-contorno {
     background: transparent;
     color: var(--color-tinta);
-    border-color: rgb(75 45 45 / 0.25);
+    border-color: rgb(91 58 78 / 0.25);
   }
   .btn-contorno:hover {
     border-color: var(--color-tinta);
@@ -117,7 +121,6 @@ body {
   }
 }
 
-
 @keyframes deslizar {
   from {
     transform: translateX(0);
@@ -135,7 +138,6 @@ body {
   animation-play-state: paused;
 }
 
-
 details summary {
   list-style: none;
   cursor: pointer;
@@ -146,7 +148,7 @@ details summary::-webkit-details-marker {
 }
 
 dialog::backdrop {
-  background: rgb(75 45 45 / 0.55);
+  background: rgb(91 58 78 / 0.5);
   backdrop-filter: blur(4px);
 }
 
